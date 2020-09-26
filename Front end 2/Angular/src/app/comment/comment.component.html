@@ -1,0 +1,22 @@
+<div class="container">
+    <h1><strong>Comment section</strong></h1>
+    <div class="alert alert-success" *ngIf="msg1 !=undefined"> {{msg1}}</div>
+     <div class="alert alert-danger" *ngIf="errorMsg1 != undefined" [innerHTML]="errorMsg">{{errorMsg1}}</div>
+  <form #CommentForm="ngForm" (ngSubmit)="comment()">
+        <div class="form-group">
+         
+            <div >User  Id </div>
+            <div ><input type="text" name="comId" [(ngModel)]="user.id" required #comId="ngModel" class="form-control"/>  </div>
+            <div class="alert alert-danger" *ngIf="comId.invalid && comId.touched" >Enter the Id.</div>
+                <div>Comment</div>
+                <textarea class="form-control"   name="comment" [(ngModel)]="user.comment" required #comComment="ngModel"></textarea>
+                <div class="alert alert-danger" *ngIf="comComment.invalid && comComment.touched" >Enter the Comment.</div>
+            
+                </div>
+                <div >User  Email </div>
+            <div ><input type="text" name="comEmailId" [(ngModel)]="user.emailId" required #comEmailId="ngModel" class="form-control"/>  </div>
+            <div class="alert alert-danger" *ngIf="comEmailId.invalid && comEmailId.touched" >Email is required.</div>
+            <div> <input type="submit" [disabled]="!CommentForm.valid" class="btn btn-success" /> </div> 
+         
+    </form>
+</div>

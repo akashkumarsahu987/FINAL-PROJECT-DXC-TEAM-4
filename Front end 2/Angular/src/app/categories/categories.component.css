@@ -1,0 +1,11 @@
+h1{
+    color: rgb(167, 19, 76);
+    align-content: center;
+}
+.grids{
+    align-content: space-around;
+
+}
+p{
+    max-lines: 4;
+}
